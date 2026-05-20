@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { img } from "../Images/server";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   const links = [
     {
@@ -19,10 +20,10 @@ export default function Header() {
       name: "About Us",
       href: "/about",
     },
-    {
-      name: "Courses",
-      href: "/courses",
-    },
+    // {
+    //   name: "Courses",
+    //   href: "/courses",
+    // },
     {
       name: "Services",
       href: "/services",
@@ -56,7 +57,10 @@ export default function Header() {
         ))}
       </nav>
       <div className="hidden md:flex items-center gap-10">
-        <button className="px-6 py-2.5 border border-gray-400 rounded-full text-md font-semibold  hover:bg-black hover:text-white transition-colors">
+        <button
+          onClick={() => router.push("/contact")}
+          className="px-6 py-2.5 border border-gray-400 rounded-full text-md font-semibold  hover:bg-black hover:text-white transition-colors"
+        >
           Contact Us
         </button>
       </div>
@@ -89,7 +93,10 @@ export default function Header() {
             ))}
           </nav>
           <div className="pt-4 border-t border-gray-100 flex flex-col gap-4">
-            <button className="px-6 py-2.5 border border-gray-400 rounded-full text-md font-semibold hover:bg-black hover:text-white   transition-colors w-full">
+            <button
+              onClick={() => router.push("/contact")}
+              className="px-6 py-2.5 border border-gray-400 rounded-full text-md font-semibold hover:bg-black hover:text-white   transition-colors w-full"
+            >
               Contact Us
             </button>
           </div>

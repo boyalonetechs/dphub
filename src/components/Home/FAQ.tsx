@@ -60,7 +60,7 @@ export default function FaqSection() {
     <section className="w-full bg-white py-12 px-4 sm:px-6 md:py-24">
       <div className="max-w-5xl mx-auto">
         {/* Header Badge */}
-        <div className="inline-block bg-gradient-to-b from-[#E7F644] to-[#25D366] px-6 py-2.5 rounded-xl shadow-md mb-10 md:mb-14">
+        <div className="inline-flex bg-gradient-to-b from-[#E7F644] to-[#25D366] px-6 py-2.5 rounded-xl shadow-md mb-10 md:mb-14">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black tracking-wide">
             Frequently Asked Question
           </h2>

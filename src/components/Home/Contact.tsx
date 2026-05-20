@@ -104,7 +104,7 @@ export default function ContactAndCallToAction() {
               help your business grow, attract customers, and increase sales.
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block bg-[#00C853] hover:bg-[#00E676] px-8 py-3.5 rounded-full text-base font-bold text-white transition-all shadow-md active:scale-95 mt-6"
             >
               Contact Us Today

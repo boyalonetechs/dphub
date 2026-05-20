@@ -1,9 +1,12 @@
+"use client";
 import { ArrowRight, Play } from "lucide-react";
 import Image from "next/image";
 import { img } from "../Images/server";
 import { AvatarCircle } from "./Avatars";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter();
   return (
     <>
       <section className=" max-w-[1640px] mx-auto px-4 md:px-20 py-10 md:py-16 w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 relative overflow-hidden bg-white">
@@ -41,7 +44,10 @@ export default function Hero() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto mt-6 md:mt-0">
-            <button className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-[#00D05A] text-white rounded-full font-semibold hover:bg-[#00b34d] hover:shadow-lg hover:shadow-green-100 transition-all duration-300 flex justify-center items-center gap-2">
+            <button
+              onClick={() => router.push("/signup")}
+              className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-[#00D05A] text-white rounded-full font-semibold hover:bg-[#00b34d] hover:shadow-lg hover:shadow-green-100 transition-all duration-300 flex justify-center items-center gap-2"
+            >
               Signup Today <ArrowRight className="w-5 h-5" />
             </button>
             <button className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-white border border-gray-200 text-[#1E1B4B] rounded-full font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 flex justify-center items-center gap-2 shadow-sm">
