@@ -20,8 +20,51 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 );
 
 const LinkedinIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="2em"
+    height="2em"
+    viewBox="0 0 24 24"
+  >
+    <path d="M0 0h24v24H0z" fill="none" />
+    <defs>
+      <mask id="SVGgMs3O0ng">
+        <path
+          fill="#fff"
+          d="M16.6 5.82c-0.68 -0.78 -1.06 -1.78 -1.06 -2.82h-3.09v12.4c-0.02 0.67 -0.31 1.31 -0.79 1.77c-0.48 0.47 -1.13 0.73 -1.8 0.73c-1.42 0 -2.6 -1.16 -2.6 -2.6c0 -1.72 1.66 -3.01 3.37 -2.48v-3.16c-3.45 -0.46 -6.47 2.22 -6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69 -2.55 5.69 -5.7v-6.29c1.25 0.9 2.76 1.38 4.3 1.38v-3.09c0 0 -1.88 0.09 -3.24 -1.48Z"
+        />
+        <g
+          fill="none"
+          stroke="#000"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        >
+          <path
+            strokeDasharray="36"
+            d="M11 11h-1c-2.21 0 -4.5 1.79 -4.5 4c0 2.21 1.5 4.5 4.5 4.5c2.21 0 4 -2.29 4 -4.5v-12.5"
+          >
+            <animate
+              fill="freeze"
+              attributeName="strokeDashoffset"
+              dur="0.6s"
+              values="72;36"
+            />
+          </path>
+          <path strokeDasharray="10" strokeDashoffset="20" d="M18 2.5v8">
+            <animate
+              fill="freeze"
+              attributeName="strokeDashoffset"
+              begin="0.5s"
+              dur="0.1s"
+              to="10"
+            />
+          </path>
+        </g>
+      </mask>
+    </defs>
+    <path fill="currentColor" d="M0 0h24v24H0z" mask="url(#SVGgMs3O0ng)" />
   </svg>
 );
 
@@ -87,9 +130,9 @@ export default function Footer() {
             </nav>
 
             <div className="flex items-center gap-4 text-gray-400 mb-8">
-              <a href="#" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 <FacebookIcon className="w-5 h-5" />
-              </a>
+              </Link>
               <a href="#" className="hover:text-white transition-colors">
                 <TwitterIcon className="w-5 h-5" />
               </a>

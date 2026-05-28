@@ -45,12 +45,19 @@ export default function Hero() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto mt-6 md:mt-0">
             <button
-              onClick={() => router.push("/signup")}
-              className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-[#00D05A] text-white rounded-full font-semibold hover:bg-[#00b34d] hover:shadow-lg hover:shadow-green-100 transition-all duration-300 flex justify-center items-center gap-2"
+              onClick={() => router.push("https://wa.me/2349012601449")}
+              className="w-full sm:w-auto cursor-pointer px-8 py-3.5 md:py-4 bg-[#00D05A] text-white rounded-full font-semibold hover:bg-[#00b34d] hover:shadow-lg hover:shadow-green-100 transition-all duration-300 flex justify-center items-center gap-2"
             >
-              Signup Today <ArrowRight className="w-5 h-5" />
+              Contact us Today <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-white border border-gray-200 text-[#1E1B4B] rounded-full font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 flex justify-center items-center gap-2 shadow-sm">
+            <button
+              onClick={() =>
+                router.push(
+                  "https://www.tiktok.com/@dphubandtech/video/7597033459969707282?",
+                )
+              }
+              className="w-full cursor-pointer sm:w-auto px-8 py-3.5 md:py-4 bg-white border border-gray-200 text-[#1E1B4B] rounded-full font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 flex justify-center items-center gap-2 shadow-sm"
+            >
               <span className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#1E1B4B]">
                 <Play className="w-4 h-4 fill-current ml-0.5" />
               </span>

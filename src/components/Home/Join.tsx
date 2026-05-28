@@ -32,7 +32,7 @@ export default function Join() {
       }
     >
       <a
-        href="#community"
+        href="https://chat.whatsapp.com/CLIBwyok2oAF029xR2Hqjb?mode=gi_t"
         className="group flex items-center gap-2 bg-green backdrop-blur-md border border-black px-4 py-2 rounded-full shadow-sm hover:shadow-md   hover:bg-black/80 hover:border-green transition-all duration-200"
       >
         <span className="text-sm font-semibold group-hover:text-green text-gray-900">
@@ -52,6 +52,6 @@ export default function Join() {
           />
         </svg>
       </a>
-    </div>      
+    </div>
   );
 }

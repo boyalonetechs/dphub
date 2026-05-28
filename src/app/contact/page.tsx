@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from "react";
 import FaqSection from "@/components/Home/FAQ";
 import TeamSection from "@/components/Home/Team";
 import TestimonialsSection from "@/components/Home/Testimonials";
@@ -6,12 +9,37 @@ import Footer from "@/components/Home/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, email, message } = formData;
+    const whatsappNumber = "2349012601449";
+    const text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <>
       <main className="min-h-screen bg-white py-16 px-4 md:px-6 md:py-24 flex items-center justify-center">
         <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
           {/* Header Section */}
-          <ScrollReveal animation="fade-up" className="text-center mb-10 md:mb-12">
+          <ScrollReveal
+            animation="fade-up"
+            className="text-center mb-10 md:mb-12"
+          >
             <span className="uppercase text-xs tracking-[0.15em] text-gray-400 font-semibold mb-3 block">
               Contact us
             </span>
@@ -24,7 +52,13 @@ export default function ContactPage() {
           </ScrollReveal>
 
           {/* Form Section */}
-          <ScrollReveal animation="fade-up" delay={200} className="w-full max-w-[500px] flex flex-col gap-6" as="form">
+          <ScrollReveal
+            animation="fade-up"
+            delay={200}
+            className="w-full max-w-[500px] flex flex-col gap-6"
+            as="form"
+            onSubmit={handleSubmit}
+          >
             {/* Name Field */}
             <div className="flex flex-col gap-1.5">
               <label
@@ -37,6 +71,9 @@ export default function ContactPage() {
                 type="text"
                 id="name"
                 placeholder="Jacob Moore"
+                value={formData.name}
+                onChange={handleChange}
+                required
                 className="w-full bg-[#F7F7F7] border border-transparent rounded-xl px-4 py-3.5 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#00C853] focus:ring-4 focus:ring-[#00C853]/10 focus:outline-none transition-all"
               />
             </div>
@@ -53,6 +90,9 @@ export default function ContactPage() {
                 type="email"
                 id="email"
                 placeholder="Dphubbyleadpath@email.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
                 className="w-full bg-[#F7F7F7] border border-transparent rounded-xl px-4 py-3.5 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#00C853] focus:ring-4 focus:ring-[#00C853]/10 focus:outline-none transition-all"
               />
             </div>
@@ -69,6 +109,9 @@ export default function ContactPage() {
                 id="message"
                 placeholder="Leave us a message..."
                 rows={6}
+                value={formData.message}
+                onChange={handleChange}
+                required
                 className="w-full bg-[#F7F7F7] border border-transparent rounded-xl px-4 py-3.5 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#00C853] focus:ring-4 focus:ring-[#00C853]/10 focus:outline-none transition-all resize-none"
               ></textarea>
             </div>
