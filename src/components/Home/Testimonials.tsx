@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface Testimonial {
@@ -9,51 +9,51 @@ interface Testimonial {
   author: string;
 }
 
+const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    text: "I joined with zero skills. Within months, I learned how to build production-ready digital platforms and work on live projects. The community support here makes training practical and easy to absorb.",
+    author: "Sarah O.",
+  },
+  {
+    id: 2,
+    text: '"Before DP Hub, our business struggled with online visibility. After they handled our content and ads, we started getting consistent customers and real sales."',
+    author: "Chinedu M",
+  },
+  {
+    id: 3,
+    text: '"DreamJob9ja helped me find real job opportunities and also guided me on how to present myself professionally. I landed my first job within weeks."',
+    author: "Samuel K.",
+  },
+  {
+    id: 4,
+    text: "The co-working space provides a pristine work ecosystem. It's stable, fully serviced, with super-fast internet, and full of like-minded innovators helping each other grow day by day.",
+    author: "Amara E.",
+  },
+  {
+    id: 5,
+    text: "The mentorship provided during the hackathon opened doors for seed investment that transformed our minimum viable product into an active commercial startup.",
+    author: "Tunde W.",
+  },
+  {
+    id: 6,
+    text: "Dplearn completely demystified UI/UX design for me. The video courses combined with real-world case study assignments gave me a portfolio that caught recruiters' attention instantly.",
+    author: "Chioma A.",
+  },
+  {
+    id: 7,
+    text: "As a local business owner, the Aba Productivity Program structure gave us the automation tools we needed to optimize our inventory tracking and boost our ad performance by 200%.",
+    author: "Chief Kalu",
+  },
+  {
+    id: 8,
+    text: "The sound quality and raw strategies inside the Dreamjob Made Easy audio guide changed everything about my application outreach loop. My callback rates grew almost overnight.",
+    author: "Emmanuel N.",
+  },
+];
+
 export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(1); // Set second card active by default
-
-  const testimonials: Testimonial[] = [
-    {
-      id: 1,
-      text: "I joined with zero skills. Within months, I learned how to build production-ready digital platforms and work on live projects. The community support here makes training practical and easy to absorb.",
-      author: "Sarah O.",
-    },
-    {
-      id: 2,
-      text: '"Before DP Hub, our business struggled with online visibility. After they handled our content and ads, we started getting consistent customers and real sales."',
-      author: "Chinedu M",
-    },
-    {
-      id: 3,
-      text: '"DreamJob9ja helped me find real job opportunities and also guided me on how to present myself professionally. I landed my first job within weeks."',
-      author: "Samuel K.",
-    },
-    {
-      id: 4,
-      text: "The co-working space provides a pristine work ecosystem. It's stable, fully serviced, with super-fast internet, and full of like-minded innovators helping each other grow day by day.",
-      author: "Amara E.",
-    },
-    {
-      id: 5,
-      text: "The mentorship provided during the hackathon opened doors for seed investment that transformed our minimum viable product into an active commercial startup.",
-      author: "Tunde W.",
-    },
-    {
-      id: 6,
-      text: "Dplearn completely demystified UI/UX design for me. The video courses combined with real-world case study assignments gave me a portfolio that caught recruiters' attention instantly.",
-      author: "Chioma A.",
-    },
-    {
-      id: 7,
-      text: "As a local business owner, the Aba Productivity Program structure gave us the automation tools we needed to optimize our inventory tracking and boost our ad performance by 200%.",
-      author: "Chief Kalu",
-    },
-    {
-      id: 8,
-      text: "The sound quality and raw strategies inside the Dreamjob Made Easy audio guide changed everything about my application outreach loop. My callback rates grew almost overnight.",
-      author: "Emmanuel N.",
-    },
-  ];
 
   // Loops back to the end card when clicking 'prev' at the beginning
   const handlePrev = () => {
@@ -64,6 +64,18 @@ export default function TestimonialsSection() {
   const handleNext = () => {
     setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
+
+  // Auto-advance to the next testimonial every 3 seconds.
+  // The interval is re-created whenever activeIndex changes, so manual
+  // navigation resets the timer.
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) =>
+        prev === testimonials.length - 1 ? 0 : prev + 1
+      );
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [activeIndex]);
 
   return (
     <section className="w-full bg-white py-16 px-4 sm:px-6 md:py-24">
