@@ -20,13 +20,13 @@ export default function Header() {
       name: "About Us",
       href: "/about",
     },
-    // {
-    //   name: "Courses",
-    //   href: "/courses",
-    // },
     {
       name: "Services",
       href: "/services",
+    },
+    {
+      name: "Contact",
+      href: "/contact",
     },
   ];
   return (
@@ -58,10 +58,14 @@ export default function Header() {
       </nav>
       <div className="hidden md:flex items-center gap-10">
         <button
-          onClick={() => router.push("/contact")}
+          onClick={() =>
+            router.push(
+              "https://chat.whatsapp.com/CLIBwyok2oAF029xR2Hqjb?mode=gi_t",
+            )
+          }
           className="px-6 py-2.5 border border-gray-400 rounded-full text-md font-semibold  hover:bg-black hover:text-white transition-colors"
         >
-          Contact Us
+          Join Community
         </button>
       </div>
 
@@ -94,10 +98,14 @@ export default function Header() {
           </nav>
           <div className="pt-4 border-t border-gray-100 flex flex-col gap-4">
             <button
-              onClick={() => router.push("/contact")}
+              onClick={() =>
+                router.push(
+                  "https://chat.whatsapp.com/CLIBwyok2oAF029xR2Hqjb?mode=gi_t",
+                )
+              }
               className="px-6 py-2.5 border border-gray-400 rounded-full text-md font-semibold hover:bg-black hover:text-white   transition-colors w-full"
             >
-              Contact Us
+              Join Community
             </button>
           </div>
         </div>
