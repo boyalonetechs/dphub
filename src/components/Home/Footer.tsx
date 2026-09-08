@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState } from "react";
 
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -69,6 +72,52 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Footer() {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+  const [isSubscribing, setIsSubscribing] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setNewsletterStatus(null);
+    setIsSubscribing(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "newsletter",
+          email: newsletterEmail,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to subscribe.");
+      }
+
+      setNewsletterEmail("");
+      setNewsletterStatus({
+        type: "success",
+        message: "Thanks for subscribing!",
+      });
+    } catch (error) {
+      setNewsletterStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
   return (
     <footer className="bg-black text-white rounded-t-[3rem] mt-12 pt-12 md:pt-16 pb-8 md:pb-10 px-4 md:px-12">
       <div className="w-full">
@@ -144,16 +193,36 @@ export default function Footer() {
               </a>
             </div>
 
-            <form className="flex items-center w-full max-w-md bg-white/5 rounded-full border border-white/10 p-1">
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="flex items-center w-full max-w-md bg-white/5 rounded-full border border-white/10 p-1"
+            >
               <input
                 type="email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="Email Address"
                 className="bg-transparent text-sm text-white px-4 py-2 outline-none w-full placeholder:text-gray-500"
               />
-              <button className="bg-[#00D05A] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#00b34d] transition-colors whitespace-nowrap">
-                Subscribe
+              <button
+                type="submit"
+                disabled={isSubscribing}
+                className="bg-[#00D05A] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#00b34d] disabled:bg-[#00D05A]/60 disabled:cursor-not-allowed transition-colors whitespace-nowrap"
+              >
+                {isSubscribing ? "Subscribing..." : "Subscribe"}
               </button>
             </form>
+            {newsletterStatus && (
+              <p
+                className={`text-sm mt-3 font-medium ${
+                  newsletterStatus.type === "success"
+                    ? "text-[#00D05A]"
+                    : "text-red-400"
+                }`}
+              >
+                {newsletterStatus.message}
+              </p>
+            )}
           </div>
         </div>
 

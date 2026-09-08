@@ -18,35 +18,59 @@ export default function TeamSection() {
       linkedinUrl: "#",
     },
     {
-      name: "Onyema promise",
-      role: "Director",
+      name: "Deborah Ochonma",
+      role: " Director | Career Consellor",
       imageUrl: "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team2.png",
       linkedinUrl: "#",
     },
     {
       name: "Miracle Chidiebere",
-      role: "Director",
+      role: "Director | Social Minister",
       imageUrl:
         "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team3.png?updatedAt=1779199758431",
       linkedinUrl: "#",
     },
     {
-      name: "Blessing Igwe",
-      role: "Creative Designer",
+      name: "Oluebube Ijere",
+      role: "Director | Career Consellor",
+      imageUrl: "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team2.png",
+      linkedinUrl: "#",
+    },
+    {
+      name: "Victor Ukwuta",
+      role: "Digital Marketer",
       imageUrl:
         "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team4.png?updatedAt=1779199814931",
       linkedinUrl: "#",
     },
     {
-      name: "Olumide Faleye",
-      role: "Senior Analyst",
+      name: "Divine Timothy",
+      role: "Full-Stack Engineer",
       imageUrl:
         "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team5.png?updatedAt=1779199855386",
       linkedinUrl: "#",
     },
     {
-      name: "Chidima C.G",
+      name: "Chidima Okpara",
       role: "Financial Analyst",
+      imageUrl: "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team6.png",
+      linkedinUrl: "#",
+    },
+    {
+      name: "Chidima Okpara",
+      role: "UI & UX Designer",
+      imageUrl: "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team6.png",
+      linkedinUrl: "#",
+    },
+    {
+      name: "Emmanuel Lazarus",
+      role: "Cinematographer",
+      imageUrl: "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team6.png",
+      linkedinUrl: "#",
+    },
+    {
+      name: "Somtochukwu Richard",
+      role: "Creative Designer",
       imageUrl: "https://ik.imagekit.io/spitndu0j/Dp%20Hub/team6.png",
       linkedinUrl: "#",
     },
@@ -54,7 +78,7 @@ export default function TeamSection() {
 
   return (
     <section className="w-full bg-white py-12 px-4 sm:px-6 md:py-24">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header Badge */}
         <div className="inline-block bg-gradient-to-b from-[#E7F644] to-[#25D366] px-6 py-2 rounded-xl shadow-md mb-12">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black tracking-wide">
@@ -69,19 +93,23 @@ export default function TeamSection() {
           <div className="flex flex-col gap-4 sm:gap-6">
             <MemberCard member={teamData[0]} />
             <MemberCard member={teamData[3]} />
+            <MemberCard member={teamData[7]} />
           </div>
 
           {/* Group 2: Column 2 (Top & Bottom pair stacked) */}
           <div className="flex flex-col gap-4 sm:gap-6">
             <MemberCard member={teamData[1]} />
             <MemberCard member={teamData[4]} />
+            <MemberCard member={teamData[8]} />
           </div>
 
           {/* Group 3: Column 3 (Top & Bottom pair stacked) */}
           <div className="flex flex-col gap-4 sm:gap-6">
             <MemberCard member={teamData[2]} />
             <MemberCard member={teamData[5]} />
+            <MemberCard member={teamData[9]} />
           </div>
+          <div className="flex flex-col gap-4 sm:gap-6"></div>
         </div>
       </div>
     </section>

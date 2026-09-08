@@ -2,8 +2,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: hsl(0, 0%, 9%);
 }
+
+/* Define a max-width variant for 300px or smaller */
+@custom-variant max-xs (@media (max-width: 400px));
+@custom-variant max-xxs (@media (min-width: 200px));
 
 @theme inline {
   --color-background: var(--background);

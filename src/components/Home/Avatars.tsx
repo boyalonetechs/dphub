@@ -3,27 +3,27 @@ import { img } from "../Images/server";
 // ─── Avatar Component ──────────────────────────────────────────────────────────
 const avatars = [
   {
-    name: "Lucas Alax",
+    name: "Ifeanyi Okocha",
     role: "CEO & Founder",
-    image: `${img}/avatars/1.jpg`,
+    image: `${img}/avatars/4.jpg`,
     color: "#8B7355",
   },
   {
-    name: "Emma Watson",
-    role: "UI/UX Designer",
+    name: "Miracle Chidebere",
+    role: "Social Minister",
     image: `${img}/avatars/2.jpg`,
     color: "#5C4033",
   },
   {
-    name: "Raj Patel",
-    role: "Full Stack Dev",
+    name: "Oluebube Ijere",
+    role: "Director",
     image: `${img}/avatars/3.jpg`,
     color: "#A0785A",
   },
   {
-    name: "Sophia Rose",
-    role: "Product Manager",
-    image: `${img}/avatars/4.jpg`,
+    name: "Deborah Ochonma",
+    role: "Career Consellor",
+    image: `${img}/avatars/1.jpg`,
     color: "#7B6344",
   },
 ];

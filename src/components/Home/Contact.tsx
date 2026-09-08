@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Loader2 } from "lucide-react";
 
 export default function ContactAndCallToAction() {
   const [formData, setFormData] = useState({
@@ -9,6 +9,11 @@ export default function ContactAndCallToAction() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -17,13 +22,40 @@ export default function ContactAndCallToAction() {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    const whatsappNumber = "2349012601449";
-    const text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
-    window.open(whatsappUrl, "_blank");
+    setStatus(null);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setFormData({ name: "", email: "", message: "" });
+      setStatus({
+        type: "success",
+        message: "Thank you! Your message has been sent.",
+      });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -102,11 +134,33 @@ export default function ContactAndCallToAction() {
                 {/* Submit Trigger: specific vibrant green button */}
                 <button
                   type="submit"
-                  className="group flex w-fit items-center justify-center gap-2.5 bg-[#00C853] hover:bg-[#00E676] px-8 py-3.5 rounded-full text-base font-bold text-white transition-all shadow-md active:scale-95"
+                  disabled={isSubmitting}
+                  className="group flex w-fit items-center justify-center gap-2.5 bg-[#00C853] hover:bg-[#00E676] disabled:bg-[#00C853]/60 disabled:cursor-not-allowed px-8 py-3.5 rounded-full text-base font-bold text-white transition-all shadow-md active:scale-95"
                 >
-                  Send Message
-                  <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  {isSubmitting ? (
+                    <>
+                      Sending...
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </>
+                  )}
                 </button>
+
+                {status && (
+                  <p
+                    className={`text-sm font-medium ${
+                      status.type === "success"
+                        ? "text-[#00C853]"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {status.message}
+                  </p>
+                )}
               </form>
             </div>
 

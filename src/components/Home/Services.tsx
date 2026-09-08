@@ -31,7 +31,8 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="#"
+                href="https://www.dplearn.org"
+                target="_blank"
                 className="group inline-flex items-center gap-2 font-semibold text-sm md:text-base mt-8"
               >
                 <div className="bg-white p-2 rounded-full flex items-center justify-center">
@@ -99,8 +100,10 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="#"
+                href="https://dreamjob-web-dp-hub.vercel.app/"
                 className="group inline-flex items-center gap-2 font-semibold text-sm mt-6"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="bg-black p-2 rounded-full flex items-center justify-center">
                   <ArrowUpRight className="w-4 h-4 text-white transform group-hover:rotate-45 transition-transform duration-200" />
@@ -136,7 +139,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="#"
+                href="/comingsoon"
                 className="group inline-flex items-center gap-2 font-bold text-sm mt-6"
               >
                 <div className="bg-black p-2 rounded-full flex items-center justify-center">
@@ -168,7 +171,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="#"
+                href="https://dphack.vercel.app"
                 className="group inline-flex items-center gap-2 font-semibold text-sm mt-6"
               >
                 <div className="bg-white p-2 rounded-full flex items-center justify-center">
@@ -200,7 +203,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="#"
+                href="/contact"
                 className="group inline-flex items-center gap-2 font-bold text-sm mt-6"
               >
                 <div className="bg-black p-2 rounded-full flex items-center justify-center">
@@ -237,7 +240,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="#"
+                href="/contact"
                 className="group inline-flex items-center gap-2 font-bold text-sm mt-6"
               >
                 <div className="bg-black p-2 rounded-full flex items-center justify-center">

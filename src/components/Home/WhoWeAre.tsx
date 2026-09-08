@@ -38,13 +38,13 @@ export default function WhoWeAre() {
       >
         <a
           href="https://chat.whatsapp.com/CLIBwyok2oAF029xR2Hqjb?mode=gi_t"
-          className="group flex items-center gap-2 bg-green backdrop-blur-md border border-black px-4 py-2 rounded-full shadow-sm hover:shadow-md   hover:bg-black/80 hover:border-green transition-all duration-200"
+          className=" flex items-center gap-2 bg-green backdrop-blur-md border border-black px-4 py-2 rounded-full shadow-sm hover:shadow-md hover:bg-black/80 hover:text-white hover:border-green transition-all duration-200"
         >
-          <span className="text-sm font-semibold group-hover:text-green text-gray-900">
-            Join our community
+          <span className="text-sm font-semibold group-hover:text-green group-hover:text-white ">
+            Join <span className="max-xs:hidden">our community</span>
           </span>
           <svg
-            className="w-4 h-4 hidden text-gray-700 transform group-hover:translate-x-0.5 transition-transform duration-200"
+            className="w-4 h-4 hidden  transform group-hover:translate-x-0.5 transition-transform duration-200"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

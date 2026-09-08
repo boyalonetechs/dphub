@@ -14,6 +14,11 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -22,13 +27,40 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    const whatsappNumber = "2349012601449";
-    const text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
-    window.open(whatsappUrl, "_blank");
+    setStatus(null);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setFormData({ name: "", email: "", message: "" });
+      setStatus({
+        type: "success",
+        message: "Thank you! Your message has been sent to DP Hub.",
+      });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -119,10 +151,23 @@ export default function ContactPage() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="mt-2 w-full bg-[#00C853] hover:bg-[#00E676] text-white font-semibold text-base py-4 rounded-[2rem] transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98]"
+              disabled={isSubmitting}
+              className="mt-2 w-full bg-[#00C853] hover:bg-[#00E676] disabled:bg-[#00C853]/60 disabled:cursor-not-allowed text-white font-semibold text-base py-4 rounded-[2rem] transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98]"
             >
-              Send message
+              {isSubmitting ? "Sending..." : "Send message"}
             </button>
+
+            {status && (
+              <p
+                className={`text-sm text-center font-medium ${
+                  status.type === "success"
+                    ? "text-[#00C853]"
+                    : "text-red-500"
+                }`}
+              >
+                {status.message}
+              </p>
+            )}
           </ScrollReveal>
         </div>
       </main>
