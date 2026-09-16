@@ -203,7 +203,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="/contact"
+                href="https://wa.me/2349012601449"
                 className="group inline-flex items-center gap-2 font-bold text-sm mt-6"
               >
                 <div className="bg-black p-2 rounded-full flex items-center justify-center">
@@ -240,7 +240,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="/contact"
+                href="https://wa.me/2349012601449"
                 className="group inline-flex items-center gap-2 font-bold text-sm mt-6"
               >
                 <div className="bg-black p-2 rounded-full flex items-center justify-center">
