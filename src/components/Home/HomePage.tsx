@@ -6,7 +6,6 @@ import Testimonials from "./Testimonials";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import WhoWeAre from "./WhoWeAre";
-import TeamSection from "./Team";
 
 export default function HomePage() {
   return (
@@ -16,7 +15,6 @@ export default function HomePage() {
         <WhoWeAre />
         <Services />
         <FAQ />
-        <TeamSection />
         {/* <Awards /> */}
         <Testimonials />
         <Contact />

@@ -2,7 +2,6 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import FaqSection from "@/components/Home/FAQ";
-import TeamSection from "@/components/Home/Team";
 import TestimonialsSection from "@/components/Home/Testimonials";
 import ContactAndCallToAction from "@/components/Home/Contact";
 import Footer from "@/components/Home/Footer";
@@ -33,8 +32,10 @@ export default function ServicesSection() {
                     programs built for real-world.
                   </p>
                 </div>
-                <a
-                  href="#"
+<a
+                  href="https://wa.me/2349012601449?text=Hi%20DP%20Hub%2C%20I%20want%20to%20learn%20more%20about%20the%20Aba%20Productivity%20Program."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 font-bold text-sm mt-6"
                 >
                   <div className="bg-black p-2 rounded-full flex items-center justify-center">
@@ -107,7 +108,7 @@ export default function ServicesSection() {
                   </p>
                 </div>
                 <a
-                  href="#"
+                  href="/coworking"
                   className="group inline-flex items-center gap-2 font-semibold text-sm mt-6"
                 >
                   <div className="bg-white p-2 rounded-full flex items-center justify-center">
@@ -265,7 +266,6 @@ export default function ServicesSection() {
         </div>
       </section>
       <FaqSection />
-      <TeamSection />
       <TestimonialsSection />
       <ContactAndCallToAction />
       <Footer />

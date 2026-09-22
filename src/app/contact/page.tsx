@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import FaqSection from "@/components/Home/FAQ";
-import TeamSection from "@/components/Home/Team";
 import TestimonialsSection from "@/components/Home/Testimonials";
 import ContactAndCallToAction from "@/components/Home/Contact";
 import Footer from "@/components/Home/Footer";
@@ -172,7 +171,6 @@ export default function ContactPage() {
         </div>
       </main>
       <FaqSection />
-      <TeamSection />
       <TestimonialsSection />
       <ContactAndCallToAction />
       <Footer />

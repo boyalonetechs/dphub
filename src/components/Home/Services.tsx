@@ -68,7 +68,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="#"
+                href="/coworking"
                 className="group inline-flex items-center gap-2 font-semibold text-sm mt-6"
               >
                 <div className="bg-white p-2 rounded-full flex items-center justify-center">
@@ -203,7 +203,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="https://wa.me/2349012601449"
+                href="/training"
                 className="group inline-flex items-center gap-2 font-bold text-sm mt-6"
               >
                 <div className="bg-black p-2 rounded-full flex items-center justify-center">
@@ -240,7 +240,9 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="https://wa.me/2349012601449"
+                href="https://wa.me/2349012601449?text=Hi%20DP%20Hub%2C%20I%20want%20to%20learn%20more%20about%20the%20Aba%20Productivity%20Program."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 font-bold text-sm mt-6"
               >
                 <div className="bg-black p-2 rounded-full flex items-center justify-center">

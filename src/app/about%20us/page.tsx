@@ -1,7 +1,6 @@
 import ContactAndCallToAction from "@/components/Home/Contact";
 import FaqSection from "@/components/Home/FAQ";
 import Footer from "@/components/Home/Footer";
-import TeamSection from "@/components/Home/Team";
 import TestimonialsSection from "@/components/Home/Testimonials";
 import React from "react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -73,7 +72,6 @@ export default function MissionVision() {
         </div>
       </section>
       <FaqSection />
-      <TeamSection />
       <TestimonialsSection />
       <ContactAndCallToAction />
       <Footer />
