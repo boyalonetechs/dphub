@@ -3,7 +3,7 @@ import { img } from "../Images/server";
 // ─── Avatar Component ──────────────────────────────────────────────────────────
 const avatars = [
   {
-    name: "Ifeanyi Okocha",
+    name: "Ifeanyi Oko",
     role: "CEO & Founder",
     image: `${img}/avatars/4.jpg`,
     color: "#8B7355",

@@ -100,7 +100,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <a
-                href="https://dreamjob-web-dp-hub.vercel.app/"
+                href="https://dreamjob9ja.com"
                 className="group inline-flex items-center gap-2 font-semibold text-sm mt-6"
                 target="_blank"
                 rel="noopener noreferrer"
