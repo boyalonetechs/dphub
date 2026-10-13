@@ -5,25 +5,25 @@ const avatars = [
   {
     name: "Ifeanyi Oko",
     role: "CEO & Founder",
-    image: `${img}/avatars/4.jpg`,
+    image: `https://scontent.flos2-2.fna.fbcdn.net/v/t39.30808-6/498274431_24310672958535955_2304648886415874077_n.jpg?stp=dst-jpg_tt6&cstp=mx640x960&ctp=s640x960&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=nVd44ZVKrSoQ7kNvwEQgIyH&_nc_oc=AdoSdiJCah3pkNAOtXuDK5qXgIDtaZ567Puv2bpr-KdhCRO1y3Msyx5ABf40y4xk0Zs&_nc_zt=23&_nc_ht=scontent.flos2-2.fna&_nc_gid=8iP9W_owVmjaQgocUasI5w&_nc_ss=7b289&oh=00_AQN585BBcrdtueVK2UIbKCGdbmUfFjVz00tQfQ_CCOryHw&oe=6AD3DFAB`,
     color: "#8B7355",
   },
   {
     name: "Miracle Chidebere",
     role: "Social Minister",
-    image: `${img}/avatars/2.jpg`,
+    image: `${img}/avatar2.jpeg`,
     color: "#5C4033",
   },
   {
     name: "Oluebube Ijere",
     role: "Director",
-    image: `${img}/avatars/3.jpg`,
+    image: `${img}/avatar3.jpeg`,
     color: "#A0785A",
   },
   {
     name: "Deborah Ochonma",
     role: "Career Consellor",
-    image: `${img}/avatars/1.jpg`,
+    image: `${img}/avatar4.jpeg`,
     color: "#7B6344",
   },
 ];

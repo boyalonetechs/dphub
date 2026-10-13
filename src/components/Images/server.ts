@@ -1,1 +1,1 @@
-export const img = "https://ik.imagekit.io/spitndu0j/Dp%20Hub/"
+export const img = "https://ik.imagekit.io/dphub/directors/"
