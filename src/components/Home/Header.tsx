@@ -34,7 +34,7 @@ export default function Header() {
       <Link href="/" className="flex items-center gap-2">
         {/* Logo placeholder */}
         <Image
-          src={`${img}/dp_logo.webp`}
+          src="https://ik.imagekit.io/spitndu0j/Dp%20Hub/dp_logo.webp"
           alt="Logo"
           width={130}
           height={130}
