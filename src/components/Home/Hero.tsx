@@ -74,7 +74,7 @@ export default function Hero() {
             {/* Interactive high-end inline SVG vector representing the premium drawing from the image */}
             <div className="relative w-full  h-full flex items-center justify-center lg:scale-180">
               <Image
-                src={`${img}/group1.png`}
+                src={`https://ik.imagekit.io/spitndu0j/Dp%20Hub/group1.png`}
                 alt="Hero Image"
                 width={600}
                 height={600}
